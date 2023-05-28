@@ -1,0 +1,40 @@
+<!-- views/new.ejs -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Recipe</title>
+  </head>
+
+  <body>
+    <h1>Edit Recipe</h1>
+    <form action="/newrecipes" method="post">
+      <div>
+        <label for="recipeName">Recipe name:</label>
+        <input
+          type="text"
+          id="recipeName"
+          name="recipeName"
+          value="<%= recipe.recipeName %>"
+        />
+      </div>
+      <div>
+        <label for="recipeTime">Recipe Time(in minutes):</label>
+        <textarea id="recipeTime" name="recipeTime">
+<%= recipe.recipeTime %></textarea
+        >
+      </div>
+      <div>
+        <label for="ingredients">Ingredients</label>
+        <textarea id="ingredients" name="ingredients">
+<%= recipe.ingredients %></textarea
+        >
+      </div>
+      <div>
+        <label for="serves">Serves(persons):</label>
+        <textarea id="serves" name="serves"><%= recipe.serves %></textarea>
+      </div>
+      <button type="submit">Save</button>
+    </form>
+  </body>
+</html>
